@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cycle of Life</title>
+
+    <!-- p5.js MUST load before sketch.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="controls">
+      <h3>CYCLE OF LIFE</h3>
+
+      <!-- LIFE STAGE -->
+
+      <section class="group">
+        <h4>Life Stage</h4>
+
+        <label for="stageSelect"> Current Stage </label>
+
+        <select id="stageSelect">
+          <option value="0">Baby</option>
+
+          <option value="1">Child Running</option>
+
+          <option value="2">Child Eating</option>
+
+          <option value="3">Child Bike</option>
+
+          <option value="4">Teenager</option>
+
+          <option value="5">Young Adult</option>
+
+          <option value="6">Wedding</option>
+
+          <option value="7">Adult Couple</option>
+
+          <option value="8">Family</option>
+
+          <option value="9">Middle Age</option>
+
+          <option value="10">Old Age</option>
+
+          <option value="11">Rebirth</option>
+        </select>
+
+        <label for="stageWords"> Knob Labels </label>
+
+        <textarea id="stageWords">
+BABY,CHILD,PLAY,GROW,TEEN,YOUNG ADULT,WEDDING,ADULT,FAMILY,MIDDLE AGE,OLD AGE,REBIRTH</textarea
+        >
+      </section>
+
+      <!-- DRUM -->
+
+      <section class="group">
+        <h4>Drum</h4>
+
+        <label> Drum X </label>
+
+        <input id="drumX" type="range" min="0" max="1000" value="500" />
+
+        <label> Drum Y </label>
+
+        <input id="drumY" type="range" min="0" max="1500" value="750" />
+
+        <label> Drum Size </label>
+
+        <input id="drumSize" type="range" min="50" max="1000" value="530" />
+
+        <label> Video Zoom </label>
+
+        <input
+          id="mediaZoom"
+          type="range"
+          min="0.5"
+          max="3"
+          step="0.01"
+          value="1.2"
+        />
+
+        <label> Spin Speed </label>
+
+        <input
+          id="spinSpeed"
+          type="range"
+          min="-0.1"
+          max="0.1"
+          step="0.001"
+          value="0.003"
+        />
+
+        <div class="button-row">
+          <button id="pauseSpin" type="button">Pause Spin</button>
+
+          <button id="reverseSpin" type="button">Reverse</button>
+        </div>
+      </section>
+
+      <!-- KNOB -->
+
+      <section class="group">
+        <h4>Life Stage Knob</h4>
+
+        <label> Knob X </label>
+
+        <input id="knobX" type="range" min="0" max="1000" value="880" />
+
+        <label> Knob Y </label>
+
+        <input id="knobY" type="range" min="0" max="1500" value="218" />
+
+        <label> Knob Radius </label>
+
+        <input id="knobRadius" type="range" min="10" max="150" value="34" />
+
+        <label> Label Distance </label>
+
+        <input id="labelRadius" type="range" min="30" max="300" value="105" />
+      </section>
+
+      <!-- TIMER -->
+
+      <section class="group">
+        <h4>Timer</h4>
+
+        <label> Timer X </label>
+
+        <input id="timerX" type="range" min="0" max="1000" value="760" />
+
+        <label> Timer Y </label>
+
+        <input id="timerY" type="range" min="0" max="1500" value="218" />
+
+        <label> Timer Width </label>
+
+        <input id="timerW" type="range" min="50" max="500" value="190" />
+
+        <label> Timer Height </label>
+
+        <input id="timerH" type="range" min="20" max="200" value="75" />
+
+        <label> Timer Text </label>
+
+        <input id="timerText" type="text" value="45:00" />
+      </section>
+
+      <!-- MAPPING -->
+
+      <section class="group">
+        <h4>Projection</h4>
+
+        <div class="button-row">
+          <button id="resetMap" type="button">Reset Mapping</button>
+
+          <button id="toggleGuides" type="button">Hide Guides</button>
+
+          <button id="toggleFullscreen" type="button">Fullscreen</button>
+        </div>
+      </section>
+
+      <div class="help">
+        1–9 = stages<br />
+        Q = middle age<br />
+        W = old age<br />
+        E = rebirth<br /><br />
+
+        H = hide UI<br />
+        F = fullscreen<br />
+        Space = pause rotation
+      </div>
+    </div>
+
+    <!-- LOAD SKETCH LAST -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+
+    <script src="sound.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
